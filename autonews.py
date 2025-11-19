@@ -1,3 +1,4 @@
+import os
 import requests
 import feedparser
 from openai import OpenAI
@@ -5,10 +6,11 @@ from openai import OpenAI
 # ============================
 #        API KEYS
 # ============================
-NEWS_API_KEY = "3727dd38a7624da2a7eb3b8ceac0e9d6"
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
-# Messaging API（重要）
-LINE_CHANNEL_ACCESS_TOKEN = "pLJLYYwnMYEO96kEehWWyOIQrZc+U7ZzejKPvq4mOEyvzoFv6TLk82PGKXw3YxSIl7vJ++A0mNnvZqpurwWOkclSJRdCOqwWE6M7e3gQ7iIfYcTAr0orBYFVmyGfS57lhliD7JKxhuk6Yv7BHG7bSAdB04t89/1O/w1cDnyilFU="
+# Messaging API
+LINE_CHANNEL_ACCESS_TOKEN = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -187,5 +189,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
