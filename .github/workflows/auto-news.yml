@@ -2,7 +2,7 @@ name: morning-news
 
 on:
   schedule:
-    - cron: "0 23 * * 1-5"   # JST 8:00、月=1 〜 金=5
+    - cron: "0 23 * * 0-4"   # JST 8:00、月=1 〜 金=5
   workflow_dispatch:
 
 jobs:
